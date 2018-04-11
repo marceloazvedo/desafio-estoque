@@ -12,7 +12,7 @@ Se você for aprovado nesta etapa, será convidado para uma entrevista final com
   - Pré-requisitos:
     ```
     * Desenvolver os recursos em API Rest;
-    * Se for persistir os dados em banco de dados, utilizar o MySql.
+    * Se for persistir os dados em banco de dados, utilizar o Postgres.
     ```
 
   - O que esperamos como escopo mínimo:
