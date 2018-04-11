@@ -8,7 +8,7 @@ A vaga é para Desenvolvedor Java, temos vagas com diversos níveis de seniorida
 Se você for aprovado nesta etapa, será convidado para uma entrevista final com nosso time técnico.
 
 ### Desafio Técnico
-  Desenvolver um sistema de gerenciamento de despesas, para manter controle entre gastos e receita de uma rede de lojas:
+  Desenvolver um sistema de gerenciamento básico de estoque para lojas, onde o usuário poderá ter controle de seu inventário de produtos:
   - Pré-requisitos:
     ```
     * Desenvolver os recursos em API Rest;
