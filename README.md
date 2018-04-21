@@ -1,48 +1,62 @@
 # desafio-estoque
 
-### Desafio Conductor de Seleção 
-Olá, queremos convidá-lo a participar de nosso desafio de seleção.  Pronto para participar? Seu trabalho será visto por nosso time e você receberá ao final um feedback sobre o que achamos do seu trabalho. Não é legal?
+### Instalação
 
-### Sobre a oportunidade 
-A vaga é para Desenvolvedor Java, temos vagas com diversos níveis de senioridade e para cada um deles utilizaremos critérios específicos considerando esse aspecto, combinado? 
-Se você for aprovado nesta etapa, será convidado para uma entrevista final com nosso time técnico.
+  1. Para executar o projeto basta fazer o clone e importar no eclipse como **Existing Maven Projects**;
+  2. Antes de executar o projeto, é neccessário criar uma base de dados no PostgreSQL chamada controle-estoque, é necessário que o PostgreSQL esteja rodando na prota 5432, nome de usuário postgres e senha root, caso contrário haverá problemas de conexão;
+  -   Caso não sejam essas as configurações do PostgreSQL, você pode editar as propriedades de conexão no arquivo **application.properties** dentro da pasta **src/main/resources**.
+  3. Depois de importar, é necessário executar um **Maven Update** no próprio eclipse, para que baixe todas as dependências necessárias para rodar o projeto, depois execute a classe **ControleEstoqueApplication** que possui um mêtodo main que executa o projeto inteiro e sobre um servidor **Tomcat** embarcado;
 
-### Desafio Técnico
-  Desenvolver um sistema de gerenciamento básico de estoque para lojas, onde o usuário poderá ter controle de seu inventário de produtos:
-  - Pré-requisitos:
-    ```
-    * Desenvolver os recursos em API Rest;
-    * Se for persistir os dados em banco de dados, utilizar o Postgres.
-    ```
+  4. Depois disso o projeto está pronto para ser executar, você pode observar toda a documentção do projeto acessando http://localhost:8080.
 
-  - O que esperamos como escopo mínimo:
-    ```
-    * Manter lojas (CRUD);
-    * Manter produtos e estoques (CRUD);
-    * Transferir produtos entre lojas;
-    * Realizar venda de produtos;
-    ```
-    
-  - O que vamos avaliar:
-    ```
-    * Seu código; 
-    * Organização;
-    * Boas práticas;
-    * Garantia de qualidade do desenvolvimento;
-    ```
+### Endpoints
 
-  - Dependências
-    ```
-    * JDK 1.8+
-    * Maven 3+
-    * JUnit 4+
-    * Spring 4+
-    ```
+  - CRUD Loja
+  ```
+    Cadastrar 
+    Method: POST
+    /api/loja
 
-### Instruções
-      1. Faça o fork do desafio e crie uma branch 'desafio_estoque_nome_candidato';
-      2. Desenvolva. Você terá 2 (dois) dias a partir da data do envio do desafio; 
-      3. Após concluir seu trabalho faça um push; 
-      4. Crie um arquivo de texto com a nomenclatura README.MD com a explicação de como devemos executar o 
-        projeto e com uma descrição do que foi feito; 
-      5. Solicite o Merge request para o repositório original e que a força esteja com você.
+    Editar 
+    Method: PUT
+    /api/loja/:idLoja
+
+    Listar 
+    Method: GET
+    /api/loja
+
+    Buscar 
+    Method: GET
+    /api/loja/:idLoja
+  ```
+### Na edição de um produto, ao alterar o Id da Loja automaticamente esse produto passa a pertecer a outra loja.
+
+  - CRUD Produto
+  ```
+    Cadastrar 
+    Method: POST
+    /api/loja/:idLoja/produto
+
+    Editar
+    Method: PUT
+    /api/produto/:idProduto
+
+    Listar 
+    Method: GET
+    /api/loja/:idLoja/produto
+
+    Buscar 
+    Method: GET
+    /api/produto/:idProduto
+
+  - Realizar venda
+  ```
+    Realizar venda
+    Method: POST
+    /api/loja/:idLoja/venda
+
+    Buscar 
+    Method: GET
+    /api/venda/:id
+
+### Todas as validações de campos e questão de lógica estão sendo realizadas.
